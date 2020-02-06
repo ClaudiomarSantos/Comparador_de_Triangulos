@@ -5,8 +5,11 @@ public class Triangulo {
 	public double b;
 	public double c;
 
- 	public double p = (a + b + c) / 2;
+	public double area(){
+		
+		double p = (a+b+c)/2;
+		return Math.sqrt(p*(p-a)*(p-b)*(p-c));
 
-	public double area = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+	}
 
 }
