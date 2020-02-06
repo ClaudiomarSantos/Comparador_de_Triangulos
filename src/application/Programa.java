@@ -10,8 +10,10 @@ public class Programa {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		Triangulo x = new Triangulo();
-		Triangulo y = new Triangulo();
+		Triangulo x,y;
+		
+		x= new Triangulo();
+		y= new Triangulo();
 
 		System.out.println("Digite os lados do triangulo X: ");
 		x.a = sc.nextDouble();
@@ -22,13 +24,19 @@ public class Programa {
 		y.a = sc.nextDouble();
 		y.b = sc.nextDouble();
 		y.c = sc.nextDouble();
+		
+		double px = (x.a + x.b + x.c) / 2;
+		double areax = Math.sqrt(px * (px - x.a) * (px - x.b) * (px - x.c));
+		
+		double py = (y.a + y.b + y.c) / 2;
+		double areay = Math.sqrt(py * (py - y.a) * (py - y.b) * (py - y.c));
+		
+		System.out.printf("área do triangulo x: %.4f%n", areax);
+		System.out.printf("área do triangulo y: %.4f%n", areay);
 
-		System.out.printf("área do triangulo x: %.4f%n", x.area);
-		System.out.printf("área do triangulo y: %.4f%n", y.area);
-
-		if (x.area > y.area) {
+		if (areax > areay) {
 			System.out.println("o triangulo de maior area é o X.");
-		} else if (x.area == y.area) {
+		} else if (areax == areay) {
 			System.out.println("os triangulos sao iguais");
 		} else {
 			System.out.println("o triangulo de maior area é o Y.");
